@@ -32,12 +32,7 @@ namespace WF_Initial_Project
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnShowData = new System.Windows.Forms.Button();
-            this.btnUpdateRecords = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dsPersonData = new WF_Initial_Project.personData();
-            this.bsTblPersonData = new System.Windows.Forms.BindingSource(this.components);
-            this.dtaTblPerson = new WF_Initial_Project.personDataTableAdapters.tblPersonDataTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +46,15 @@ namespace WF_Initial_Project
             this.yearlySalaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ipaddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsTblPersonData = new System.Windows.Forms.BindingSource(this.components);
+            this.dsPersonData = new WF_Initial_Project.personData();
+            this.btnShowData = new System.Windows.Forms.Button();
+            this.btnUpdateRecords = new System.Windows.Forms.Button();
+            this.dtaTblPerson = new WF_Initial_Project.personDataTableAdapters.tblPersonDataTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPersonData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTblPersonData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPersonData)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,27 +71,6 @@ namespace WF_Initial_Project
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(765, 262);
             this.panel2.TabIndex = 1;
-            // 
-            // btnShowData
-            // 
-            this.btnShowData.Location = new System.Drawing.Point(593, 375);
-            this.btnShowData.Name = "btnShowData";
-            this.btnShowData.Size = new System.Drawing.Size(102, 40);
-            this.btnShowData.TabIndex = 2;
-            this.btnShowData.TabStop = false;
-            this.btnShowData.Text = "Show Data";
-            this.btnShowData.UseVisualStyleBackColor = true;
-            this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
-            // 
-            // btnUpdateRecords
-            // 
-            this.btnUpdateRecords.Location = new System.Drawing.Point(485, 375);
-            this.btnUpdateRecords.Name = "btnUpdateRecords";
-            this.btnUpdateRecords.Size = new System.Drawing.Size(102, 40);
-            this.btnUpdateRecords.TabIndex = 2;
-            this.btnUpdateRecords.Text = "Update Record";
-            this.btnUpdateRecords.UseVisualStyleBackColor = true;
-            this.btnUpdateRecords.Click += new System.EventHandler(this.btnUpdateRecords_Click);
             // 
             // dataGridView1
             // 
@@ -117,20 +96,6 @@ namespace WF_Initial_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(765, 262);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dsPersonData
-            // 
-            this.dsPersonData.DataSetName = "dsPersonData";
-            this.dsPersonData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsTblPersonData
-            // 
-            this.bsTblPersonData.DataMember = "tblPersonData";
-            this.bsTblPersonData.DataSource = this.dsPersonData;
-            // 
-            // dtaTblPerson
-            // 
-            this.dtaTblPerson.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -211,6 +176,41 @@ namespace WF_Initial_Project
             this.ipaddressDataGridViewTextBoxColumn.HeaderText = "ip_address";
             this.ipaddressDataGridViewTextBoxColumn.Name = "ipaddressDataGridViewTextBoxColumn";
             // 
+            // bsTblPersonData
+            // 
+            this.bsTblPersonData.DataMember = "tblPersonData";
+            this.bsTblPersonData.DataSource = this.dsPersonData;
+            // 
+            // dsPersonData
+            // 
+            this.dsPersonData.DataSetName = "dsPersonData";
+            this.dsPersonData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnShowData
+            // 
+            this.btnShowData.Location = new System.Drawing.Point(593, 375);
+            this.btnShowData.Name = "btnShowData";
+            this.btnShowData.Size = new System.Drawing.Size(102, 40);
+            this.btnShowData.TabIndex = 2;
+            this.btnShowData.TabStop = false;
+            this.btnShowData.Text = "Show Data";
+            this.btnShowData.UseVisualStyleBackColor = true;
+            this.btnShowData.Click += new System.EventHandler(this.btnShowData_Click);
+            // 
+            // btnUpdateRecords
+            // 
+            this.btnUpdateRecords.Location = new System.Drawing.Point(485, 375);
+            this.btnUpdateRecords.Name = "btnUpdateRecords";
+            this.btnUpdateRecords.Size = new System.Drawing.Size(102, 40);
+            this.btnUpdateRecords.TabIndex = 2;
+            this.btnUpdateRecords.Text = "Update Record";
+            this.btnUpdateRecords.UseVisualStyleBackColor = true;
+            this.btnUpdateRecords.Click += new System.EventHandler(this.btnUpdateRecords_Click);
+            // 
+            // dtaTblPerson
+            // 
+            this.dtaTblPerson.ClearBeforeFill = true;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,12 +221,12 @@ namespace WF_Initial_Project
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "DashBoard";
-            this.Text = "Form1";
+            this.Text = "Update Employee Records";
             this.Load += new System.EventHandler(this.DashBoard_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPersonData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTblPersonData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPersonData)).EndInit();
             this.ResumeLayout(false);
 
         }
